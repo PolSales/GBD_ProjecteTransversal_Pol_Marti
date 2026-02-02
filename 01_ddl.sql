@@ -3,27 +3,27 @@ CREATE DATABASE practiques;
 
 CREATE TABLE cicle (
     id int,
-    nom varchar(10),
+    nom varchar(10) UNIQUE NOT NULL,
 
     CONSTRAINT cicle_id_pk PRIMARY KEY (id)
 );
 
 CREATE TABLE alumne (
     idalu int,
-    nom varchar(12),
-    cognom varchar (20),
+    nom varchar(12) NOT NULL,
+    cognom varchar (20) NOT NULL,
     contacte varchar(25),
     promocio varchar(10),
     curs varchar(5),
-    estat varchar(5),
-    nass varchar(12),
+    estat varchar(5) NOT NULL CHECK(estat IN ('actiu', 'baixa')),
+    nass varchar(12) UNIQUE NOT NULL,
     ipo boolean,
     troncals boolean,
     observacions varchar(50),
     cicle int,
 
     CONSTRAINT alumne_idalu_pk PRIMARY KEY (idalu),
-    CONSTRAINT alumne_id_cicle_fkey FOREIGN KEY (cicle) REFERENCES cicle(id)
+    CONSTRAINT alumne_id_cicle_fkey FOREIGN KEY (cicle) REFERENCES cicle(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE avaluacio (
