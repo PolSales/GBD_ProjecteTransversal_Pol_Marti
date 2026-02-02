@@ -17,7 +17,7 @@ CREATE TABLE alumne (
     promocio varchar(10),
     curs varchar(5),
     estat varchar(5) NOT NULL CHECK(estat IN ('actiu', 'baixa')),
-    nass varchar(12) UNIQUE NOT NULL,
+    nass varchar(12) UNIQUE,
     ipo boolean,
     troncals boolean,
     observacions varchar(50),
@@ -57,7 +57,7 @@ CREATE TABLE segueix (
 
 CREATE TABLE empresa (
     cif varchar(9),
-    nom varchar(10) NOT NULL,
+    nom varchar(15) NOT NULL,
     sector varchar(20) NOT NULL,
     ubicacio varchar(30) NOT NULL,
     contacte varchar(25),
@@ -68,7 +68,7 @@ CREATE TABLE empresa (
 CREATE TABLE tutor (
     id int,
     nom varchar(20) NOT NULL,
-    contacte varchar(25),
+    contacte varchar(30),
     empresa varchar(9) NOT NULL,
 
     CONSTRAINT tutor_pk PRIMARY KEY (id, empresa),
@@ -80,7 +80,7 @@ CREATE TABLE assignacio (
     empresa varchar(9),
     inici date NOT NULL,
     fi date,
-    estat varchar(10) NOT NULL CHECK (estat IN ('proposada', 'confirmada', 'finalitzada', 'cancelada')),
+    estat varchar(11) NOT NULL CHECK (estat IN ('proposada', 'confirmada', 'finalitzada', 'cancelada')),
     tutor int,
 
     CONSTRAINT assignacio_pk PRIMARY KEY (alumne, empresa),

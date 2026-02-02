@@ -25,7 +25,7 @@ INSERT INTO alumne VALUES (4, 'Jordi', 'Martínez', '633445566', '2025-2027', '2
 INSERT INTO alumne VALUES (5, 'Anna', 'Vila', '644556677', '2025-2027', '2n', 'actiu', 5678901234, true, true, 'Excel·lent', 2);
 INSERT INTO alumne VALUES (6, 'Pau', 'Soler', '655667788', '2025-2027', '1r', 'actiu', 6789012345, false, false, 'Li costa programar', 3);
 INSERT INTO alumne VALUES (7, 'Clàudia', 'Ferrer', '666778899', '2025-2027', '2n', 'actiu', 7890123456, true, true, 'Molt constant', 1);
-INSERT INTO alumne VALUES (8, 'Marc', 'Giménez', 'marcgimenez@iticbcn.cat', '2025-2027', '1r', 'actiu', 8901234567, false, true, 'Pot millorar', 2);
+INSERT INTO alumne VALUES (8, 'Marc', 'Giménez', 'marcgimenez@iticbcn.cat', '2025-2027', '1r', 'actiu', 8901234567, true, true, 'Pot millorar', 2);
 INSERT INTO alumne VALUES (9, 'Aina', 'Navarro', '688990011', '2025-2027', '2n', 'actiu', 9012345678, true, true, 'Molt bona actitud', 3);
 INSERT INTO alumne VALUES (10, 'Eric', 'Morales', '699001122', '2025-2027', '1r', 'actiu', 1123456789, false, false, 'Despistat però amb potencial', 1);
 INSERT INTO alumne VALUES (11, 'Núria', 'Casas', '610112233', '2025-2027', '2n', 'actiu', 2234567890, true, true, 'Treballadora', 2);
@@ -33,11 +33,11 @@ INSERT INTO alumne VALUES (12, 'Adrià', 'López', '621223344', '2025-2027', '1r
 INSERT INTO alumne VALUES (13, 'Berta', 'Serra', 'bertaserra@yahoo.es', '2025-2027', '2n', 'actiu', 4456789012, true, true, 'Molt organitzada', 1);
 INSERT INTO alumne VALUES (14, 'Nil', 'Puig', '643445566', '2025-2027', '1r', 'actiu', 5567890123, false, false, 'Ha de millorar hàbits', 2);
 INSERT INTO alumne VALUES (15, 'Irene', 'Costa', '654556677', '2025-2027', '2n', 'actiu', 6678901234, true, true, 'Participativa', 3);
-INSERT INTO alumne VALUES (16, 'Roger', 'Blanch', '665667788', '2025-2027', '1r', 'actiu', 7789012345, false, true, 'Bon en pràctica', 1);
+INSERT INTO alumne VALUES (16, 'Roger', 'Blanch', '665667788', '2025-2027', '1r', 'actiu', 7789012345, true, true, 'Bo a la pràctica', 1);
 INSERT INTO alumne VALUES (17, 'Laia', 'Ortega', '676778899', '2025-2027', '2n', 'baixa', 8890123456, true, true, 'Molt responsable', 2);
 INSERT INTO alumne VALUES (18, 'Oriol', 'Ribera', '687889900', '2025-2027', '1r', 'actiu', 9901234567, false, false, 'Poc constant', 3);
 INSERT INTO alumne VALUES (19, 'Judith', 'Cano', '698990011', '2025-2027', '2n', 'actiu', 1012345678, true, true, 'Molt bona alumna', 1);
-INSERT INTO alumne VALUES (20, 'Ivan', 'Domènech', '609001122', '2025-2027', '1r', 'actiu', 2123456789, false, true, 'Motivat', 2);
+INSERT INTO alumne VALUES (20, 'Ivan', 'Domènech', '609001122', '2025-2027', '1r', 'actiu', 2123456789, true, true, 'Motivat', 2);
 
 INSERT INTO avaluacio VALUES (1, '2025-01-15', 8, 'Bon inici de curs', 1);
 INSERT INTO avaluacio VALUES (2, '2025-01-15', 7, 'Bona evolució', 2);
@@ -60,6 +60,36 @@ INSERT INTO avaluacio VALUES (18, '2025-01-15', 6, 'Poc constant', 18);
 INSERT INTO avaluacio VALUES (19, '2025-01-15', 9, 'Resultats molt bons', 19);
 INSERT INTO avaluacio VALUES (20, '2025-01-15', 7, 'Motivat i amb interès', 20);
 
+INSERT INTO criteri VALUES (1, 'Teoria');
+INSERT INTO criteri VALUES (2, 'Pràctica');
+INSERT INTO criteri VALUES (3, 'Participació');
+INSERT INTO criteri VALUES (4, 'Treball en equip');
+INSERT INTO criteri VALUES (5, 'Projecte final');
+
+INSERT INTO segueix VALUES (1, 1, 8);
+INSERT INTO segueix VALUES (1, 2, 9);
+INSERT INTO segueix VALUES (1, 3, 7);
+INSERT INTO segueix VALUES (2, 1, 7);
+INSERT INTO segueix VALUES (2, 2, 7);
+INSERT INTO segueix VALUES (2, 3, 8);
+INSERT INTO segueix VALUES (3, 1, 9);
+INSERT INTO segueix VALUES (3, 2, 9);
+INSERT INTO segueix VALUES (3, 4, 9);
+INSERT INTO segueix VALUES (4, 1, 5);
+INSERT INTO segueix VALUES (4, 2, 6);
+INSERT INTO segueix VALUES (5, 1, 9);
+INSERT INTO segueix VALUES (5, 2, 9);
+INSERT INTO segueix VALUES (6, 1, 6);
+INSERT INTO segueix VALUES (6, 2, 6);
+INSERT INTO segueix VALUES (7, 1, 8);
+INSERT INTO segueix VALUES (7, 2, 8);
+INSERT INTO segueix VALUES (8, 1, 6);
+INSERT INTO segueix VALUES (8, 2, 7);
+INSERT INTO segueix VALUES (9, 1, 9);
+INSERT INTO segueix VALUES (9, 3, 9);
+INSERT INTO segueix VALUES (10, 1, 7);
+INSERT INTO segueix VALUES (10, 2, 7);
+
 INSERT INTO empresa VALUES ('A12345678', 'TechCorp', 'Tecnologia', 'Barcelona', 'info@techcorp.es');
 INSERT INTO empresa VALUES ('B23456789', 'DataSys', 'Informàtica', 'Madrid', 'contacte@datasys.com');
 INSERT INTO empresa VALUES ('C34567890', 'WebDev', 'Desenvolupament', 'València', 'hola@webdev.cat');
@@ -73,14 +103,102 @@ INSERT INTO empresa VALUES ('J01234567', 'AISolutions', 'Intel·ligència', 'Bar
 
 INSERT INTO tutor VALUES (1, 'Maria García', 'maria.garcia@techcorp.es', 'A12345678');
 INSERT INTO tutor VALUES (2, 'Joan Martínez', 'joan.martinez@techcorp.es', 'A12345678');
-INSERT INTO tutor VALUES (1, 'Laura Sánchez', 'laura.sanchez@datasys.com', 'B23456789');
-INSERT INTO tutor VALUES (1, 'Pere López', 'pere.lopez@webdev.cat', 'C34567890');
-INSERT INTO tutor VALUES (1, 'Anna Torres', 'anna.torres@cloudnet.es', 'D45678901');
-INSERT INTO tutor VALUES (1, 'Marc Ruiz', 'marc.ruiz@securit.es', 'E56789012');
-INSERT INTO tutor VALUES (1, 'Sara Morales', 'sara.morales@mobileapp.com', 'F67890123');
-INSERT INTO tutor VALUES (1, 'David Fernández', 'david.fernandez@datalab.cat', 'G78901234');
-INSERT INTO tutor VALUES (1, 'Cristina Jiménez', 'cristina.jimenez@gamestudio.es', 'H89012345');
-INSERT INTO tutor VALUES (1, 'Oriol Navarro', 'oriol.navarro@network.es', 'I90123456');
+INSERT INTO tutor VALUES (3, 'Laura Sánchez', 'laura.sanchez@datasys.com', 'B23456789');
+INSERT INTO tutor VALUES (4, 'Pere López', 'pere.lopez@webdev.cat', 'C34567890');
+INSERT INTO tutor VALUES (5, 'Anna Torres', 'anna.torres@cloudnet.es', 'D45678901');
+INSERT INTO tutor VALUES (6, 'Marc Ruiz', 'marc.ruiz@securit.es', 'E56789012');
+INSERT INTO tutor VALUES (7, 'Sara Morales', 'sara.morales@mobileapp.com', 'F67890123');
+INSERT INTO tutor VALUES (8, 'David Fernández', 'david.fernandez@datalab.cat', 'G78901234');
+INSERT INTO tutor VALUES (9, 'Cristina Jiménez', 'cristina.jimenez@gamestudio.es', 'H89012345');
+INSERT INTO tutor VALUES (10, 'Oriol Navarro', 'oriol.navarro@network.es', 'I90123456');
+
+INSERT INTO assignacio VALUES (1, 'A12345678', '2025-02-01', '2025-06-30', 'confirmada', 1);
+INSERT INTO assignacio VALUES (5, 'D45678901', '2025-03-01', NULL, 'proposada', 5);
+INSERT INTO assignacio VALUES (7, 'E56789012', '2024-09-01', '2025-01-31', 'finalitzada', 6);
+INSERT INTO assignacio VALUES (9, 'F67890123', '2025-02-10', '2025-07-10', 'confirmada', 7);
+INSERT INTO assignacio VALUES (11, 'G78901234', '2025-03-15', NULL, 'proposada', 8);
+INSERT INTO assignacio VALUES (13, 'H89012345', '2024-10-01', '2025-02-28', 'finalitzada', 9);
+INSERT INTO assignacio VALUES (15, 'I90123456', '2025-01-15', NULL, 'cancelada', 10);
+
+INSERT INTO tecnologia VALUES (1, 'Java');
+INSERT INTO tecnologia VALUES (2, 'Python');
+INSERT INTO tecnologia VALUES (3, 'SQL');
+INSERT INTO tecnologia VALUES (4, 'JavaScript');
+INSERT INTO tecnologia VALUES (5, 'HTML/CSS');
+INSERT INTO tecnologia VALUES (6, 'React');
+INSERT INTO tecnologia VALUES (7, 'Node.js');
+INSERT INTO tecnologia VALUES (8, 'Git');
+
+INSERT INTO domina VALUES (1, 1);
+INSERT INTO domina VALUES (1, 3);
+INSERT INTO domina VALUES (1, 4);
+INSERT INTO domina VALUES (2, 1);
+INSERT INTO domina VALUES (2, 2);
+INSERT INTO domina VALUES (3, 4);
+INSERT INTO domina VALUES (3, 5);
+INSERT INTO domina VALUES (3, 6);
+INSERT INTO domina VALUES (5, 2);
+INSERT INTO domina VALUES (5, 3);
+INSERT INTO domina VALUES (7, 1);
+INSERT INTO domina VALUES (7, 3);
+INSERT INTO domina VALUES (9, 4);
+INSERT INTO domina VALUES (9, 6);
+INSERT INTO domina VALUES (11, 1);
+INSERT INTO domina VALUES (12, 2);
+INSERT INTO domina VALUES (12, 3);
+INSERT INTO domina VALUES (13, 1);
+INSERT INTO domina VALUES (13, 8);
+INSERT INTO domina VALUES (15, 4);
+INSERT INTO domina VALUES (15, 6);
+INSERT INTO domina VALUES (16, 2);
+INSERT INTO domina VALUES (16, 7);
+INSERT INTO domina VALUES (19, 1);
+INSERT INTO domina VALUES (19, 4);
+INSERT INTO domina VALUES (20, 2);
+INSERT INTO domina VALUES (20, 8);
+
+INSERT INTO preferencia VALUES ('A12345678', 1);
+INSERT INTO preferencia VALUES ('A12345678', 3);
+INSERT INTO preferencia VALUES ('A12345678', 4);
+INSERT INTO preferencia VALUES ('B23456789', 1);
+INSERT INTO preferencia VALUES ('B23456789', 2);
+INSERT INTO preferencia VALUES ('C34567890', 4);
+INSERT INTO preferencia VALUES ('C34567890', 5);
+INSERT INTO preferencia VALUES ('C34567890', 6);
+INSERT INTO preferencia VALUES ('D45678901', 2);
+INSERT INTO preferencia VALUES ('D45678901', 7);
+INSERT INTO preferencia VALUES ('E56789012', 1);
+INSERT INTO preferencia VALUES ('E56789012', 3);
+INSERT INTO preferencia VALUES ('F67890123', 4);
+INSERT INTO preferencia VALUES ('F67890123', 6);
+INSERT INTO preferencia VALUES ('G78901234', 2);
+INSERT INTO preferencia VALUES ('G78901234', 3);
+INSERT INTO preferencia VALUES ('H89012345', 4);
+INSERT INTO preferencia VALUES ('H89012345', 6);
+INSERT INTO preferencia VALUES ('I90123456', 3);
+INSERT INTO preferencia VALUES ('I90123456', 8);
+INSERT INTO preferencia VALUES ('J01234567', 2);
+INSERT INTO preferencia VALUES ('J01234567', 4);
+
+INSERT INTO dual VALUES (1, 'Empresa');
+INSERT INTO dual VALUES (2, 'Centre');
+INSERT INTO dual VALUES (3, 'Mixt');
+
+INSERT INTO interes VALUES ('A12345678', 1);
+INSERT INTO interes VALUES ('A12345678', 3);
+INSERT INTO interes VALUES ('B23456789', 1);
+INSERT INTO interes VALUES ('C34567890', 1);
+INSERT INTO interes VALUES ('C34567890', 2);
+INSERT INTO interes VALUES ('D45678901', 1);
+INSERT INTO interes VALUES ('E56789012', 1);
+INSERT INTO interes VALUES ('F67890123', 1);
+INSERT INTO interes VALUES ('F67890123', 3);
+INSERT INTO interes VALUES ('G78901234', 1);
+INSERT INTO interes VALUES ('H89012345', 1);
+INSERT INTO interes VALUES ('I90123456', 1);
+INSERT INTO interes VALUES ('I90123456', 2);
+INSERT INTO interes VALUES ('J01234567', 1);
+INSERT INTO interes VALUES ('J01234567', 3);
 
 INSERT INTO cv VALUES (1, '2024-09-01', '2025-01-10', 'Desenvolupador full-stack', 'https://cv.com/pol-sales', 'actiu', 1);
 INSERT INTO cv VALUES (2, '2024-09-05', '2025-01-12', 'Programador Java i Python', 'https://cv.com/marti-fernandez', 'actiu', 2);
@@ -102,15 +220,6 @@ INSERT INTO cv VALUES (17, '2024-08-15', NULL, 'Desenvolupadora responsable', 'h
 INSERT INTO cv VALUES (18, '2024-11-15', NULL, 'Programador constant', 'https://cv.com/oriol-ribera', 'obsolet', 18);
 INSERT INTO cv VALUES (19, '2024-11-20', '2025-01-24', 'Desenvolupadora excel·lent', 'https://cv.com/judith-cano', 'actiu', 19);
 INSERT INTO cv VALUES (20, '2024-11-25', '2025-01-25', 'Programador motivat', 'https://cv.com/ivan-domenech', 'actiu', 20);
-
-INSERT INTO assignacio VALUES (1, 'A12345678', '2025-02-01', '2025-06-30', 'confirmada', 1);
-INSERT INTO assignacio VALUES (2, 'B23456789', '2025-02-15', '2025-07-15', 'confirmada', 1);
-INSERT INTO assignacio VALUES (5, 'D45678901', '2025-03-01', NULL, 'proposada', 1);
-INSERT INTO assignacio VALUES (7, 'E56789012', '2024-09-01', '2025-01-31', 'finalitzada', 1);
-INSERT INTO assignacio VALUES (9, 'F67890123', '2025-02-10', '2025-07-10', 'confirmada', 1);
-INSERT INTO assignacio VALUES (11, 'G78901234', '2025-03-15', NULL, 'proposada', 1);
-INSERT INTO assignacio VALUES (13, 'H89012345', '2024-10-01', '2025-02-28', 'finalitzada', 1);
-INSERT INTO assignacio VALUES (15, 'I90123456', '2025-01-15', NULL, 'cancelada', 1);
 
 INSERT INTO enviament VALUES (1, 'A12345678', 'acceptat', 'Interessat en el perfil', '2024-12-01', '2024-12-05', '2024-12-15');
 INSERT INTO enviament VALUES (1, 'B23456789', 'entrevista', 'Candidat adequat', '2024-12-02', '2024-12-06', '2024-12-20');
